@@ -16,7 +16,7 @@ import javax.persistence.OneToMany;
 public class Seller {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 	private String name;
 	
 	@OneToMany(mappedBy = "seller")
@@ -27,16 +27,16 @@ public class Seller {
 	}
 
 	public Seller(Long id, String name) {
-		Id = id;
+		this.id = id;
 		this.name = name;
 	}
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Long id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
