@@ -19,12 +19,14 @@ public class SellerService {
 	
 	public List<SellerDTO> findAll(){
 		List<Seller> result = repository.findAll();
-		List<SellerDTO> sellerDTO = new ArrayList<>();
+		
+		//List<SellerDTO> sellerDTO = new ArrayList<>();
 		//for(Seller s: result) {
 			//SellerDTO seller = new SellerDTO(s);
 			//sellerDTO.add(seller);
 		//}
 		//return sellerDTO;
+		
 		return result.stream().map(x -> new SellerDTO(x)).collect(Collectors.toList());
 	}
 }
